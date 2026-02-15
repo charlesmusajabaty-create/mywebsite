@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Charles EasyStay Booking</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      background: #f2f2f2;
+      margin: 0;
+    }
+
+    header {
+      background: #0066cc;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      width: 280px;
+      margin: 15px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px gray;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card .info {
+      padding: 15px;
+      text-align: center;
+    }
+
+    button {
+      background: green;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: darkgreen;
+    }
+
+    /* Booking Form */
+
+    .form-box {
+      background: white;
+      max-width: 400px;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gray;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<header>
+  <h1> Charles EasyStay Booking</h1>
+  <p>Hotels • Airbnb • Guest Houses</p>
+</header>
+
+<!-- Listings -->
+
+<div class="container">
+
+  <div class="card">
+    <img src="images/hotel1.jpg">
+    <div class="info">
+      <h3>Freetown Hotel</h3>
+      <p>Le2000 / Night</p>
+      <button onclick="selectPlace('Freetown Hotel')">Book Now</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/hotel2.jpg">
+    <div class="info">
+      <h3>Bo Apartment</h3>
+      <p>Le1500 / Night</p>
+      <button onclick="selectPlace('Bo Apartment')">Book Now</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/guest1.jpg">
+    <div class="info">
+      <h3>Lungi Guest House</h3>
+      <p>Le1900 / Night</p>
+      <button onclick="selectPlace('Lungi Guest House')">Book Now</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- Booking Form -->
+
+<div class="form-box">
+
+  <h2>Booking Form</h2>
+
+  <form onsubmit="submitBooking()">
+
+    <input type="text" id="place" placeholder="Place" readonly>
+
+    <input type="text" id="name" placeholder="Your Name" required>
+
+    <input type="email" id="email" placeholder="Email" required>
+
+    <input type="email" id="email" placeholder="Phone Number" required>
+
+    <input type="date" required>
+
+    <input type="date" required>
+
+    <button type="submit">Confirm Booking</button>
+
+  </form>
+
+</div>
+
+<script>
+
+function selectPlace(place) {
+  document.getElementById("place").value = place;
+  window.scrollTo(0, document.body.scrollHeight);
+}
+
+function submitBooking() {
+
+  alert("Booking Successful!\nWe will contact you soon.");
+
+}
+
+</script>
+
+</body>
+</html>
